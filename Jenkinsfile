@@ -14,9 +14,13 @@ pipeline{
         stage('Build Project'){
             steps{
                 script{
-                    if("${env.GIT_BRANCH}" == "master")
+                    if("${env.GIT_BRANCH}" == "master" && "${params.SERVICE_NAME}" == "dbStatistics")
                     {
                         sh "echo ${params.SERVICE_NAME}"
+                    }
+                    else
+                    {
+                        sh "echo not matched"
                     }
                 }
             }
