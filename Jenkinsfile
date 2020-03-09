@@ -13,7 +13,12 @@ pipeline{
     stages{
         stage('Build Project'){
             steps{
-                sh "echo ${params.SERVICE_NAME}"
+                script{
+                    if("${env.GIT_BRANCH}" == "master")
+                    {
+                        sh "echo ${params.SERVICE_NAME}"
+                    }
+                }
             }
         }
     }
