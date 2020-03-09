@@ -13,9 +13,7 @@ pipeline{
     stages{
         stage('Build Project'){
             steps{
-                sh '''
-                    echo "${params.SERVICE_NAME}"
-                '''
+                sh "echo ${params.SERVICE_NAME}"
             }
         }
     }
