@@ -7,6 +7,7 @@ pipeline{
     
     parameters {
         choice(name: 'SERVICE_NAME', choices: ['alarmsandevents', 'dbStatistics', 'managerial', 'metertransaction', 'networkcoverage', 'outagemap', 'summarymap', 'transaction'], description: 'Select the service to be deployed')
+        text(name: 'BIOGRAPHY', defaultValue: 'One\n\Two', description: 'Enter some information about the person')
    }
 
     
@@ -17,6 +18,7 @@ pipeline{
                     if("${env.GIT_BRANCH}" == "master" && "${params.SERVICE_NAME}" == "dbStatistics")
                     {
                         sh "echo ${params.SERVICE_NAME}"
+                        sh "echo ${params.BIOGRAPHY}"
                     }
                     else
                     {
