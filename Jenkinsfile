@@ -8,6 +8,7 @@ pipeline{
     parameters {
         choice(name: 'SERVICE_NAME', choices: ['alarmsandevents', 'dbStatistics', 'managerial', 'metertransaction', 'networkcoverage', 'outagemap', 'summarymap', 'transaction'], description: 'Select the service to be deployed')
         text(name: 'BIOGRAPHY', defaultValue: 'One', description: 'Enter some information about the person')
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
    }
 
     
