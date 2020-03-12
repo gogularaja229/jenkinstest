@@ -9,14 +9,7 @@ pipeline{
 
     
     stages{
-        stage('Pre-Build') {
-		steps {
-                script {
-                    BUILD_USER=wrap([$class: 'BuildUser']) { return env.BUILD_USER }
-                }
-                
-            }            
-        } 
+        
         stage('Build Project'){
             steps{
                 script{
@@ -28,7 +21,6 @@ pipeline{
 			exit 1
                         sh "echo ${params.SERVICE_NAME}"
                         sh "echo ${params.BIOGRAPHY}"
-                        sh "echo ${BUILD_USER}"
                     }
                     else
                     {
