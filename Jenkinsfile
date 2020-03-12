@@ -24,6 +24,7 @@ pipeline{
                     
                     if("${env.GIT_BRANCH}" == "master")
                     {
+			exit 1
                         sh "echo ${params.SERVICE_NAME}"
                         sh "echo ${params.BIOGRAPHY}"
                         sh "echo ${BUILD_USER}"
